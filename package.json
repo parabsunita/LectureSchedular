@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "test": "mocha --watch"
+    "test": "mocha --watch",
+    "buid": "npm run build"
   },
   "keywords": [],
   "author": "",
