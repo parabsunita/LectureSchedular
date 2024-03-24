@@ -134,6 +134,7 @@ const ScheduleLectures = () => {
               <Select
                 labelId="course-label"
                 id="course-select"
+                label="Select Course"
                 value={lectureData.course}
               >
                 {courses.map((course) => (
@@ -141,6 +142,7 @@ const ScheduleLectures = () => {
                     key={course._id}
                     value={course._id}
                     id={course._id}
+                    className="menuItem"
                     onClick={(e) => {
                       setLectureData({
                         ...lectureData,
@@ -170,6 +172,7 @@ const ScheduleLectures = () => {
                     key={instructor._id}
                     value={instructor._id}
                     id={instructor._id}
+                    className="menuItem"
                     onClick={(e) => {
                       setLectureData({
                         ...lectureData,
@@ -196,9 +199,14 @@ const ScheduleLectures = () => {
               InputLabelProps={{
                 shrink: true,
               }}
+              sx={{ width: "100%" }} // Set width to 100% of the parent container
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid
+            item
+            xs={12}
+            sx={{ display: "flex", justifyContent: "flex-end" }}
+          >
             <StyledButton
               variant="contained"
               color="primary"
