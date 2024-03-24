@@ -19,8 +19,8 @@ const Home = () => {
   }, []);
 
   return (
-    <Box textAlign="center" mt={4}>
-      <Typography variant="h5" gutterBottom>
+    <Container textAlign="center" mt={4}>
+      <Typography  variant="h5" fontWeight="bold" gutterBottom>
         Scheduled Lectures
       </Typography>
       <Box height="50vh" overflow="auto"  bgcolor="grey" color="white">
@@ -45,7 +45,7 @@ const Home = () => {
           </Table>
         </TableContainer>
       </Box>
-    </Box>
+    </Container>
   );
 };
 
