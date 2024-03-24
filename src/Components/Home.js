@@ -23,28 +23,29 @@ const Home = () => {
       <Typography variant="h5" gutterBottom>
         Scheduled Lectures
       </Typography>
-      <TableContainer component={Paper}>
-        <Table aria-label="lecture table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Date</TableCell>
-              <TableCell>Instructor</TableCell>
-              <TableCell>Course</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {lectures.map((lecture) => (
-              <TableRow key={lecture._id}>
-                <TableCell>{lecture.date}</TableCell>
-                <TableCell>{lecture.instructor}</TableCell>
-                <TableCell>{lecture.course}</TableCell>
+      <Box height="50vh" overflow="auto"  bgcolor="grey" color="white">
+        <TableContainer component={Paper}>
+          <Table aria-label="lecture table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Date</TableCell>
+                <TableCell>Instructor</TableCell>
+                <TableCell>Course</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {lectures.map((lecture) => (
+                <TableRow key={lecture._id}>
+                  <TableCell>{lecture.date}</TableCell>
+                  <TableCell>{lecture.instructor}</TableCell>
+                  <TableCell>{lecture.course}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
     </Box>
-  
   );
 };
 
