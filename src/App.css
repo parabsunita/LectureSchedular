@@ -122,6 +122,20 @@ legend span,
   font-weight: 700 !important;
   line-height: 1.2;
 }
+body {
+  height: 100vh !important;
+  background: #494545 !important;
+}
+.css-115e1zv-MuiDrawer-docked .MuiDrawer-paper {
+  width: 240px;
+  height: 100vh;
+  background: #6c6969;
+}
+.css-1yz78kl {
+  background-color: transparent !important;
+  padding: 2rem !important;
+  color: white !important;
+}
 @keyframes slide {
   0% {
     transform: translateX(-25%);
@@ -129,4 +143,10 @@ legend span,
   100% {
     transform: translateX(25%);
   }
+}
+
+h5.MuiTypography-root.MuiTypography-h5.MuiTypography-gutterBottom.css-gm0pd4-MuiTypography-root,
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper,
+.css-cveggr-MuiListItemIcon-root {
+  color: #fff !important;
 }
