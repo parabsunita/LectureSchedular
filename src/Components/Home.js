@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <Box textAlign="center" mt={4}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Scheduled Lectures
       </Typography>
       <TableContainer component={Paper}>
