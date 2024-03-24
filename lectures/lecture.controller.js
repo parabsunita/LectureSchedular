@@ -7,7 +7,34 @@ const Lecture = require("../model/lecture.model");
 // Get all lectures
 exports.getAllLectures = async (req, res) => {
   try {
-    const lectures = await Lecture.find();
+    const lectures = await Lecture.aggregate([
+      {
+        $lookup: {
+          from: "instructors", // Name of the Instructor collection
+          localField: "instructor",
+          foreignField: "_id",
+          as: "instructor", // Name of the field to store the instructor document
+        },
+      },
+      {
+        $lookup: {
+          from: "courses", // Name of the Course collection
+          localField: "course",
+          foreignField: "_id",
+          as: "course", // Name of the field to store the course document
+        },
+      },
+      { $unwind: "$instructor" }, // Unwind the array produced by the instructor lookup
+      { $unwind: "$course" }, // Unwind the array produced by the course lookup
+      {
+        $project: {
+          date: 1,
+          instructor: "$instructor.name", // Project the instructor name
+          course: "$course.name", // Project the course name
+        },
+      },
+    ]);
+
     res.json(lectures);
   } catch (error) {
     res.status(500).json({ message: error.message });
