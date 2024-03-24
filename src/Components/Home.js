@@ -19,11 +19,11 @@ const Home = () => {
   }, []);
 
   return (
-    <Container textAlign="center" mt={4}>
+    <Container textAlign="center" mt={2}>
       <Typography  variant="h5" fontWeight="bold" gutterBottom>
         Scheduled Lectures
       </Typography>
-      <Box height="50vh" overflow="auto"  bgcolor="grey" color="white">
+      <Box height="70vh" overflow="auto"  bgcolor="grey" color="white">
         <TableContainer component={Paper}>
           <Table aria-label="lecture table">
             <TableHead>
