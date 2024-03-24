@@ -27,26 +27,32 @@ const Home = () => {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Instructor</TableCell>
-            <TableCell>Course</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {lectures.map((lecture) => (
-            <TableRow key={lecture._id}>
-              <TableCell>{lecture.date}</TableCell>
-              <TableCell>{lecture.instructor}</TableCell>
-              <TableCell>{lecture.course}</TableCell>
+    <Box textAlign="center" mt={4}>
+      <Typography variant="h4" gutterBottom>
+        Scheduled Lectures
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table aria-label="lecture table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Date</TableCell>
+              <TableCell>Instructor</TableCell>
+              <TableCell>Course</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {lectures.map((lecture) => (
+              <TableRow key={lecture._id}>
+                <TableCell>{lecture.date}</TableCell>
+                <TableCell>{lecture.instructor}</TableCell>
+                <TableCell>{lecture.course}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
+  
   );
 };
 
