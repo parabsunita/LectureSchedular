@@ -3,7 +3,7 @@ import axios from "axios";
 // Add a request interceptor
 axios.interceptors.request.use(
   function (config) {
-    config.baseURL = "http://localhost:3000/api/";
+    config.baseURL = process.env.REACT_APP_API_URL;
 
     // Set Content-Type header to application/json
     config.headers["Content-Type"] = "application/json";
