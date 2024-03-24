@@ -1,19 +1,52 @@
-import React from "react";
-import { Typography, Container } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import {
+  Table,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+  Paper,
+} from "@mui/material";
+import axiosService from "../shared/axiosService";
 
 const Home = () => {
+  const [lectures, setLectures] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axiosService.get("/schedule-lecture");
+        setLectures(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
-        Welcome to the Admin Panel
-      </Typography>
-      <Typography variant="body1" paragraph>
-        This is the home page of the admin panel.
-      </Typography>
-      <Typography variant="body1">
-        You can use the sidebar to navigate to different sections.
-      </Typography>
-    </Container>
+    <TableContainer component={Paper}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Date</TableCell>
+            <TableCell>Instructor</TableCell>
+            <TableCell>Course</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {lectures.map((lecture) => (
+            <TableRow key={lecture._id}>
+              <TableCell>{lecture.date}</TableCell>
+              <TableCell>{lecture.instructor}</TableCell>
+              <TableCell>{lecture.course}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 
