@@ -39,7 +39,7 @@ const Sidebar = () => {
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
-          <ListItemText primary="Home" />
+          <ListItemText primary="Scheduled Lecture" />
         </ListItem>
         <ListItem button component={Link} to="/add-course">
           <ListItemIcon>
