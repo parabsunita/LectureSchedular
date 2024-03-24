@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Table,
-  TableContainer,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableBody,
-  Paper,
-} from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Box } from "@mui/material";
 import axiosService from "../shared/axiosService";
 
 const Home = () => {
