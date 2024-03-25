@@ -30,12 +30,14 @@ const Home = () => {
   }, []);
 
   return (
-    <Container textAlign="center" mt={2}>
+    <Container style={{ width: "100%", textAlign: "center" }}>
       <Typography variant="h5" fontWeight="bold" gutterBottom>
         Scheduled Lectures
       </Typography>
       <Box height="70vh" overflow="auto" bgcolor="grey" color="white">
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} style={{ width: "100%" }}>
+          {" "}
+          {/* Adjust the width here */}
           <Table aria-label="lecture table">
             <TableHead>
               <TableRow>
