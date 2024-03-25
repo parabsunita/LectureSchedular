@@ -151,6 +151,14 @@ h5.MuiTypography-root.MuiTypography-h5.MuiTypography-gutterBottom.css-gm0pd4-Mui
   color: #fff !important;
 }
 .css-11xur9t-MuiPaper-root-MuiTableContainer-root {
-  background-color: #bdb8b8 !important;
+  background-color: #918d8d !important;
   color: #fff !important;
+}
+.css-1ex1afd-MuiTableCell-root,
+.css-1ygcj2i-MuiTableCell-root {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+.css-1ygcj2i-MuiTableCell-root {
+  font-size: 16px !important;
 }
